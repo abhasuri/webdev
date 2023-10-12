@@ -10,15 +10,15 @@ def loginpage(request):
         password = request.POST.get('pswd')
         user = authenticate(username=username,pswd=password)
 
-        if user is not None:  #agar user none nhi hai to redirect to homepage
+        if user is not None:  
             login(request,user)
             return redirect('homepage')
         else:
-            return render(request,'loginpage.html')
-    return render(request, 'loginpage.html')
+            return render(request,'index.html')
+    return render(request, 'index.html')
 
 def homepage(request):
-    return render(request,'homepage.html')
+    return render(request,'index.html')
 
 def aboutus(request):
     return render(request,'aboutus.html')
